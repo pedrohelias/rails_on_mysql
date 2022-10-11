@@ -1,0 +1,9 @@
+1o passo: rails new "projeto" --database=mysql
+2o passo:  gem install mysql2 no projeto(duvida no comando, checar em database.yml )
+3o passo: bundle install
+4o passo: rails generate scaffold customer name:string email:string birthday:date obs:text (vai criar views, controllers, migrate, entre outros)
+5o passo: rake db:create (para criar as base de dados do projeto, geralmente nomeDoProjeto_development e nomeDoProjeto_test)
+6o_passo: rake db:migrate (migrar os dados realizados no 4 passo e criar a tabela de referencia dentro da base de dados). 
+7o_passo: É possível observar a tabela criada acessnado o mysql no terminal. 
+
+
