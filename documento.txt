@@ -6,4 +6,24 @@
 6o_passo: rake db:migrate (migrar os dados realizados no 4 passo e criar a tabela de referencia dentro da base de dados). 
 7o_passo: É possível observar a tabela criada acessnado o mysql no terminal. 
 
+======================================================================================================
 
+
+MODELS
+Na pasta app, após o scaffold a pasta Models foi prenchida. Um arquivo chamado customer.rb "vazio" com apenas uma única especificação de herança, herdando a classe ActiveRecord::Base. O Active Record é um dos frameworks que constituem o Rails e que toma conta da persistência do banco de dados. Ele que vai fazer a comunicação com o banco de dados e correlacionar com a classe, é um ORM. Sendo assim, ele vai procurar pela tabela correspondente(apenas pelo fato de herdar). O Costumer tem uma tabela gerada na base de dados Customers no plural. Seguindo a convenção nome do model no singular e noma da tabela no plural 
+
+Rails Console ou Rails c -> Vai abrir o console do rails, em um ambiente que vai carregar todas as classes disponiveis no projeto rails. Semelhante ao IRB. Se eu fizesse um a = Customer.first, a variavel a seria composta pelo primeiro elemento da tabela Customers no banco de dados. E isso tudo é possível por conta do ActiveRecord, de fazer a relaçaõ entre classe e banco de dados.
+
+
+CONTROLERS 
+
+Por convenção o Rails cria um arquivo com o nome da classe no plural + underscore + controller 
+No controller, se coloca as ações no sistema, os métodos no padrão:
+
+def action
+    #code 
+end 
+
+em customers_controller ele cria todos os métodos que solicitamos scaffold. Essa classe herda diretamente de ApplicationController. Existe uma convenção no Rails que pra toda Action eu preciso  ter uma view. Este arquivo é repleto de ações, como a index. A maioria possui. 
+
+Lembrando que variaveis de instancias são iniciadas por @, e dessa forma poderemos utilizar em outra ações. Ou seja, quando definimos uma @variavel, podemos utilizar ela entre o controller e a view. Consigo utilizar uma variavel criada dessa forma na controoler dentro da view. 
