@@ -27,3 +27,42 @@ end
 em customers_controller ele cria todos os métodos que solicitamos scaffold. Essa classe herda diretamente de ApplicationController. Existe uma convenção no Rails que pra toda Action eu preciso  ter uma view. Este arquivo é repleto de ações, como a index. A maioria possui. 
 
 Lembrando que variaveis de instancias são iniciadas por @, e dessa forma poderemos utilizar em outra ações. Ou seja, quando definimos uma @variavel, podemos utilizar ela entre o controller e a view. Consigo utilizar uma variavel criada dessa forma na controoler dentro da view. 
+
+=====================================================================================
+
+ROTAS 
+
+o arquivo config/routes.rb possui as rotas do projeto, que serão encontradas a partir da url 
+
+Vamos criar uma rota na mão, mas pra isso precisamos de um controller tambem. Então, para tal: 
+rails g controller welcome => Vai gerar(o g é de generate) um controller chamado welcome nos controllers
+Dentro de view ele também automaticamente criou uma pasta para definirmos a view desse controller novo 
+
+Agora é só escrever o codigo que se deseja dentro da controller criada welcome_controller.rb 
+Com o código produzido, é hora de criar a view. Como o generator apenas criou a pasta, precisaremos criar o arquivo. Então, seu nome será index.html.erb pois o nome da action criada na classe welcome_controller é index, html pois é uma página virtual web, e erb para definir a mistura de html com ruby. 
+
+Para unir a rota da view criada relativa a action index, devemos definir a rota na config/routes.rb 
+Uma rapida explicação sobre verbo http. Nos primórdios, foi criado o verbo http Get (vai pegar o que se digitou na pagina e busca no servidor) e http post (vai gravar alguma coisa na web, envio de dados pelo servidor). Para definir uma rota no ruby, primeiramente define-se o verbo (nesse caso get), depois o nome da rota(no caso "inicio"), e por fim o apontamento dessa rota, no caso para a controller welcome que criamos, e para o action "index". 
+EScrevendo na sintaxe, temos: 
+
+get "inicio" => "welcome#index"
+
+Um bom teste a ser feito é na classe welcome_controller, a action index, definirmos uma variavel la. No caso, criamos  @teste = "Estou aprendendo rails"
+
+Ja no arquivo da view, para mostrar essa variavel, utilizaremos a estrtuura <%= VARIAVEL %>
+No caso, fica assim: <h3><%=@index%></h3>
+
+Para encontrar no browse, é só procurar por "inicio"
+
+Sobre os HELPERS
+
+ActionView::Helpers     link_to (serve para redirecionar paginas )
+
+Então, para isso faremos: 
+
+<%= link_to "Cadastro de Clientes", "/customers"%>
+
+Sendo link_to uma sintaxe normal, o primeiro nome refere-se ao nome do texto, e o segundo nome refere-se ao link que deseja-se acessar. Dessa forma descrita acima e composta pela tag <%=%>
+Apesar de nao ser a forma mais correta de se acessar 
+
+Caso acessemos rails/info/routas no url, vamos encontrar todas as rotas disponiveis no projeto. ACessando essa pagina, vimos que a rota para costumer é descrita simplesmente como "customers_path". Ao substituirmos no codigo, vimos que funciona igualmente 
