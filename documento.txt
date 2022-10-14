@@ -1,7 +1,7 @@
 1o passo: rails new "projeto" --database=mysql
 2o passo:  gem install mysql2 no projeto(duvida no comando, checar em database.yml )
-3o passo: bundle install
-4o passo: rails generate scaffold customer name:string email:string birthday:date obs:text (vai criar views, controllers, migrate, entre outros)
+3o passo: bundle install para rodar as gems no gemfile 
+4o passo: rails generate scaffold customer name:string email:string birthday:date obs:text (vai criar views, controllers, migrate, entre outros) -> Para criar a classe customer 
 5o passo: rake db:create (para criar as base de dados do projeto, geralmente nomeDoProjeto_development e nomeDoProjeto_test)
 6o_passo: rake db:migrate (migrar os dados realizados no 4 passo e criar a tabela de referencia dentro da base de dados). 
 7o_passo: É possível observar a tabela criada acessnado o mysql no terminal. 
@@ -66,3 +66,20 @@ Sendo link_to uma sintaxe normal, o primeiro nome refere-se ao nome do texto, e 
 Apesar de nao ser a forma mais correta de se acessar 
 
 Caso acessemos rails/info/routas no url, vamos encontrar todas as rotas disponiveis no projeto. ACessando essa pagina, vimos que a rota para costumer é descrita simplesmente como "customers_path". Ao substituirmos no codigo, vimos que funciona igualmente 
+
+======================================================================================================
+
+REST/RESTFUL
+Um conjunto de princípios de arquitetura que definem formas de comunicaçãa via internet. O Rest reproduzir coisas diferntes para que sejam lidas de mesmo jeito. A questão da semântica. 
+
+Há a proposta de POST, GET, PUT e DELETE. Muito relativa ao CRUD. Relancioanndo ao CRUD, teríamos então:
+
+POST = Create 
+GET = Read
+PUT = Update 
+DELETE = Delete 
+
+"resoucers:costurmers" que está escrito no arquivo de rotas vai possibilitar o acesso as 4 funcionaildades do REST. Caso fosse excluído ou apenas comentado, haveria a possibilidade apenas de GET e PUT 
+
+É interessante que no próprio aquivo de de controllers, relacionado a classe Costumers, há a sinalizaçaõ comentada de qual requisição vai indicar a action citada. 
+
