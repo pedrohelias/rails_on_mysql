@@ -83,3 +83,24 @@ DELETE = Delete
 
 É interessante que no próprio aquivo de de controllers, relacionado a classe Costumers, há a sinalizaçaõ comentada de qual requisição vai indicar a action citada. 
 
+================================================================================================
+
+:Symbols x Strings 
+
+A diferneça principal é a forma como se armazena na memoria. Stirngs ocumpam diferentes espaços, mesmo em caso de objeto(object_id) com nome de string igual. O que difere diretamente de Symbols, que apesar de poder ser selecionado diversas vezes, retonra o mesmo estado, caso ja tenha sido utilizado. 
+
+Pesquisando, criando e persistindo no Banco de Dados. 
+Rails C ou rails console para abrir o console do Ruby.
+
+Lembrando que o rails console carrega todas as clsses do projeto, e para pesquisar no rails console, podemos utilizar apenas Ruby, pensando no que diz respeito a banco de dados. Um exemplo:
+
+Queremos listar todas instancias criadas em Customer que representa o modelo que herda diretamente do ActiveDirecotr. Se fizermos: x = Customer.all o console vai retornar todas adiçções realizadas na tabela de customers, vai exibir todos os elementos. 
+
+PAra pesquisar no console, podemos utilizar y = Customer.where(id: 1) OU y = Customer.where(:id => 1) , bastante semelhante a query no sql 
+
+Oara adicionar basta escrever a = Customer.create(name: "Pedro", birthday: Date.today.....)
+
+Da para isntanciar os objetos e depois adicionar as variaveis nele. w = Customer.new 
+w.nome = "joao" por exemplo...
+
+O porém é que precisa escrever w.sabe por fim para adicionar todas esses dados a tabela, para garantir a inserção dos mesmos na tabela do banco de dados.
