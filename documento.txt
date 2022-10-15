@@ -104,3 +104,15 @@ Da para isntanciar os objetos e depois adicionar as variaveis nele. w = Customer
 w.nome = "joao" por exemplo...
 
 O porém é que precisa escrever w.sabe por fim para adicionar todas esses dados a tabela, para garantir a inserção dos mesmos na tabela do banco de dados.
+
+======================================================================================================
+
+Filtros:
+
+before_action X before_filter => São um mesmo elemento, o detalhe é que before_action é o utilizado hoje. Explicitamente, filtros são métodos que seriam rodados antes ou depois de uma ação do controller. Ele vai ordenar o que deve ser feito antes de cada açaõ. Existem algumas actions que estão explciitadas nesse ponto de definição do filtro. 
+
+IMPORTANTE: O Caminho de dados é o seguinte: A partir de uma rota que vai ser acessada, o sistema co-relaciona diretamente com a action associada. E após isso, o sistema encontra a view associada a essa action e a renderiza na página. É possível chamar diferentes partes de views em outras. Por exemplo, numa página x chamar a view do Forms que está em outra view. 
+
+Partials: 
+
+_sua_partial.html.erb  é exxatamente o caso do forms citado acima 
