@@ -127,3 +127,36 @@ Há uma diferença em alguns helpers, relacioandos a associação com a classe. 
 PARAMS 
 
 Algumas rotas necessitam de um elemento associado a essa rota para ser encontrada ou determiando. Um exemplo, para exibir um cadastro de customers especifico, a rota é linkada ao customer_path, que é construida a partir de /customer/id . Esse id vai puxar do banco de dados diretamnete o elemento armazenado. Então, params é o que está chegando na requisiçaõ.
+
+=====================================================================================================
+
+Internacionalization
+
+i18n - traduzir a página de forma simples. PAra ativar é simples: config/application.rb
+Primeira config: Tirar o comentário de config.i18n.default_locale = "pt-BR".
+
+Dentro de config/locales temos o arquivo en, que represennta o ingles. Devemos criar um outro aquivo então pt-br.yml 
+Preenchemos o arquivo com: 
+"pt-BR": 
+  hello: "Olá Mundo!"
+
+Como utilizar: 
+    translate #traduzir textos
+    localize #localizar data/hora - fomatação de data e horario 
+
+    Para tal, o i18n já determina algumas classes para realizazr essa operações 
+    I18n.t #traduzir
+    I18n.l #localize
+
+    Em alguns casos, da pra utlizar apenas t e l 
+
+    em index.html.erb adicionaremos: 
+
+    <h3>
+  <%= t('hello')%>
+</h3>
+
+Com isso ele trará na tela o Ola mundo em portugues, pois foi definido acima que o padrão está em portugues
+
+Ja para localizar, é necessário criar um arquivo chamado pt-br_rails.yml 
+E em seguida preenche-lo com todo texto contigo em: https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/pt-BR.yml
