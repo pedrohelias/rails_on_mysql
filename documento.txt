@@ -160,3 +160,26 @@ Com isso ele trará na tela o Ola mundo em portugues, pois foi definido acima qu
 
 Ja para localizar, é necessário criar um arquivo chamado pt-br_rails.yml 
 E em seguida preenche-lo com todo texto contigo em: https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/pt-BR.yml
+
+======================================================================================================
+
+https://github.com/seyhunak/twitter-bootstrap-rails
+
+Twitter Bootstrap -> Um framework que facilita e simplifica a criaçaõ de frontend para projetos de software, de uma forma responsiva 
+Para instalar se utiliza uma gem
+
+Adicionar a gem do Bootstrap -> gem 'twitter-bootstrap-rails'
+E instalar o bundle com "bundle install"  
+Apos isso, "rails generate bootstrap:install less" -> vai criar alguns assets 
+
+Após esse passo, é necssário gerar layouts e views 
+para layout temos: rails g bootstrap:layout [LAYOUT_NAME]
+O nome do layout é "application". Todo projeto passa por lá.
+
+Com isso, o comando para gerar esse layout é: rails g bootstrap:layout application fluid 
+
+Depois temos que gerar o tema: rails g bootstrap:themed [RESOURCE_NAME]
+
+utilizamos rails g bootstrap:themed Customers
+
+Após isso, o twitter bootstrap já está instalado na aplicação 
