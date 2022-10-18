@@ -116,3 +116,14 @@ IMPORTANTE: O Caminho de dados é o seguinte: A partir de uma rota que vai ser a
 Partials: 
 
 _sua_partial.html.erb  é exxatamente o caso do forms citado acima 
+
+======================================================================================================
+
+Mais sobre Helpers 
+
+Todos elementos presentes em _customer.html.erb são helpers também. "form_for" é um helper que auxilia na construçaõ de formulários. Se passarmos uma variável em branco relacionada a classe criada como argumento do form_for, só por isso, elec criará o formulário. É uma box, então tudo relacionado ao argumento descrito será relacionado com esse argumento descrito.helper. Como no arquivo, temos |f|. Então, teremos f.text_field, f.label. E assim por diante. Neste ponto há a associação do f, que é relativo ao customer. 
+Há uma diferença em alguns helpers, relacioandos a associação com a classe. Por exemplo, se não utilizarmos o f.text_field, utilizaremos text_field.tag, fazendo com que se associe a um elemento comum. Pode gerar problemas posteriores. 
+
+PARAMS 
+
+Algumas rotas necessitam de um elemento associado a essa rota para ser encontrada ou determiando. Um exemplo, para exibir um cadastro de customers especifico, a rota é linkada ao customer_path, que é construida a partir de /customer/id . Esse id vai puxar do banco de dados diretamnete o elemento armazenado. Então, params é o que está chegando na requisiçaõ.
